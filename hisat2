@@ -238,7 +238,8 @@ my @mate1s = ();
 my @mate2s = ();
 my @to_delete = ();
 my @to_kills = ();
-my $temp_dir = "$ENV{TMPDIR}";
+my $temp_dir = ""
+if (defined "$ENV{TMPDIR}" && -d "$ENV{TMPDIR}") { $temp_dir = "$ENV{TMPDIR}"; } else { $temp_dir = "/tmp"; }
 my $bam_out = 0;
 my $ref_str = undef;
 my $no_pipes = 0;
